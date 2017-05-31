@@ -24,7 +24,7 @@ RUN \
 #  pacman -S vim tree iproute2 inetutils --noconfirm && \
 
   # Install sbt
-  pacman -S sbt jdk8-openjdk --noconfirm && \
+  pacman -S jdk8-openjdk sbt --noconfirm && \
 
   # Configure sbt
   mkdir -p /root/.sbt/0.13/plugins/ && \
