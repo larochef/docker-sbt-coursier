@@ -18,10 +18,10 @@ RUN \
   pacman -S docker --noconfirm && \
 
   # Install what is needed for building native extensions
-#  pacman -S gcc make sed awk gzip grep --noconfirm && \
+  pacman -S gcc make sed awk gzip grep --noconfirm && \
 
   # Install useful tools
-#  pacman -S vim tree iproute2 inetutils --noconfirm && \
+  pacman -S vim tree iproute2 inetutils --noconfirm && \
 
   # Install sbt
   pacman -S jdk8-openjdk sbt --noconfirm && \
