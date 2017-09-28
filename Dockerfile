@@ -29,6 +29,8 @@ RUN \
   # Configure sbt
   mkdir -p /root/.sbt/0.13/plugins/ && \
   echo 'addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0-RC11")' > /root/.sbt/0.13/plugins/coursier.sbt && \
+  mkdir -p /root/.sbt/1.0/plugins/ && \
+  echo 'addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0-RC11")' > /root/.sbt/1.0/plugins/coursier.sbt && \
   
 
   # Generate locale en_US (workaround for a strange bug in berkshelf)
