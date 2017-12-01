@@ -29,7 +29,6 @@ RUN \
   # Configure sbt
   mkdir -p /root/.sbt/0.13/plugins/ && \
   echo 'addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0-RC13")' > /root/.sbt/0.13/plugins/coursier.sbt && \
-  echo 'addSbtPlugin("com.github.cuzfrog" % "sbt-tmpfs" % "0.3.1")' >> /root/.sbt/0.13/plugins/coursier.sbt && \
   mkdir -p /root/.sbt/1.0/plugins/ && \
   echo 'addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0-RC13")' > /root/.sbt/1.0/plugins/coursier.sbt && \
   
