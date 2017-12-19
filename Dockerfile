@@ -12,7 +12,7 @@ RUN \
   pacman -Su --noconfirm && \
 
   # Install Git
-  pacman -S git --noconfirm && \
+  pacman -S git openssh --noconfirm && \
 
   # Install Docker
   pacman -S docker --noconfirm && \
