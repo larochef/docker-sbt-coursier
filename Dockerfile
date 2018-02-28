@@ -11,20 +11,15 @@ RUN \
   pacman-db-upgrade && \
   pacman -Su --noconfirm && \
 
-  # Install Git
-  pacman -S git openssh --noconfirm && \
+  # Install utilities
+  pacman -S git openssh docker gcc make sed awk gzip grep curl vim tree iproute2 inetutils sbt --noconfirm && \
 
-  # Install Docker
-  pacman -S docker --noconfirm && \
-
-  # Install what is needed for building native extensions
-  pacman -S gcc make sed awk gzip grep --noconfirm && \
-
-  # Install useful tools
-  pacman -S vim tree iproute2 inetutils --noconfirm && \
-
-  # Install sbt
-  pacman -S jdk8-openjdk sbt --noconfirm && \
+  # Install zulu
+  mkdir -p /usr/lib/jvm && \
+  curl https://cdn.azul.com/zulu/bin/zulu8.28.0.1-jdk8.0.163-linux_x64.tar.gz --output - |tar -xzC /usr/lib/jvm && \
+  ln -sf /usr/lib/jvm/zulu8.28.0.1-jdk8.0.163-linux_x64 /usr/lib/jvm/default && \
+  ln -sf /usr/lib/jvm/zulu8.28.0.1-jdk8.0.163-linux_x64 /usr/lib/jvm/default-runtime && \
+  ln -sf /usr/lib/jvm/default-runtime/bin/java /usr/bin/java && \
 
   # Configure sbt
   mkdir -p /root/.sbt/0.13/plugins/ && \
